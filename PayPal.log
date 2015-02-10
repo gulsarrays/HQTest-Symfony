@@ -129,3 +129,11 @@ PPHttpConnection: Adding header Accept: */*
 [10-02-2015 06:51:19] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
 [10-02-2015 06:51:19] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
 [10-02-2015 06:51:28] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[10-02-2015 09:07:26] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[10-02-2015 09:07:29] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[10-02-2015 09:07:29] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[10-02-2015 09:07:38] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[10-02-2015 09:11:11] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[10-02-2015 09:11:15] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[10-02-2015 09:11:15] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[10-02-2015 09:11:21] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201

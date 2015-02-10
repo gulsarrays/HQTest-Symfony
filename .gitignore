@@ -11,3 +11,5 @@
 /bin/
 /composer.phar
 /nbproject/
+/src/Acme/DemoBundle/Tests/
+/src/AppBundle/Tests/

@@ -1,1 +1,60 @@
 This is HQTest Assignment in Symfony FrameWork
+
+Installation :
+	+ Download the Zip from the GITHUB
+	+ Unzip the folder in web root directory
+	+ Create DB and table
+		CREATE TABLE IF NOT EXISTS `hqtest_order` (
+		  `order_id` int(11) NOT NULL AUTO_INCREMENT,
+		  `customer_name` varchar(255) NOT NULL,
+		  `card_holder_name` varchar(255) NOT NULL,
+		  `card_number` varchar(20) NOT NULL,
+		  `card_type` varchar(25) NOT NULL,
+		  `card_expiry` varchar(10) NOT NULL,
+		  `card_cvv` varchar(4) NOT NULL,
+		  `payment_currency` varchar(3) NOT NULL,
+		  `payment_gateway` varchar(25) NOT NULL,
+		  `transaction_id` varchar(50) DEFAULT NULL,
+		  `order_status` varchar(20) DEFAULT NULL,
+		  `order_amount` varchar(20) DEFAULT NULL,
+		  `order_created_time` datetime DEFAULT NULL,
+		  `transaction_response` text NOT NULL,
+		  PRIMARY KEY (`order_id`)
+		) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+	+ By command line go to the project folder
+	+ run the composer update command and provide the DB credentials
+	+ run php app/console server:run command
+	+ go to the below url and add /hqtest/  like below
+
+		http://127.0.0.1:8000/hqtest/
+
+	+ Here you can test the assignment on brower
+
+	+ To run the phpunit tests
+		phpunit -c app/ or sudo phpunit -c app/
+
+	initailly it may show you like this
+
+	-----------------------------------------------------------------------------------------------------------------------------
+	-	1) Acme\DemoBundle\Tests\Controller\DemoControllerTest::testIndex														-
+	-		Failed asserting that 0 is greater than 0.																			-
+	-																															-
+	-		/var/www/public_html/GTest/HQTest-Symfony-master/src/Acme/DemoBundle/Tests/Controller/DemoControllerTest.php:15		-
+	-																															-
+	-	2) AppBundle\Tests\Controller\DefaultControllerTest::testIndex															-
+	-		Failed asserting that 500 matches expected 200.																		-
+	-																															-
+	-		/var/www/public_html/GTest/HQTest-Symfony-master/src/AppBundle/Tests/Controller/DefaultControllerTest.php:15		-
+	-																															-
+	-	FAILURES!                                         																		-
+	-		Tests: 28, Assertions: 27, Failures: 2, Errors: 1.																	-
+	-----------------------------------------------------------------------------------------------------------------------------
+
+	This is because Acme\DemoBundle\ and AppBunlde Tests are there, so you can delete the controller folder fron the path
+
+	/HQTest-Symfony-master/src/Acme/DemoBundle/Tests/
+	/HQTest-Symfony-master/src/AppBundle/Tests/
+
+
+
+
