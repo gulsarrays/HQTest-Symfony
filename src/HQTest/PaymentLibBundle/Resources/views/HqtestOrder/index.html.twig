@@ -1,0 +1,65 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>HqtestOrder list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Customername</th>
+                <th>Cardholdername</th>
+                <th>Cardnumber</th>
+                <th>Cardtype</th>
+                <th>Cardexpiry</th>
+                <th>Cardcvv</th>
+                <th>Paymentcurrency</th>
+                <th>Paymentgateway</th>
+                <th>Transactionid</th>
+                <th>Orderstatus</th>
+                <th>Orderamount</th>
+                <th>Ordercreatedtime</th>
+                <th>Transactionresponse</th>
+                <th>Orderid</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('hqtestorder_show', { 'id': entity.orderId }) }}">{{ entity.customerName }}</a></td>
+                <td>{{ entity.cardHolderName }}</td>
+                <td>{{ entity.cardNumber }}</td>
+                <td>{{ entity.cardType }}</td>
+                <td>{{ entity.cardExpiry }}</td>
+                <td>{{ entity.cardCvv }}</td>
+                <td>{{ entity.paymentCurrency }}</td>
+                <td>{{ entity.paymentGateway }}</td>
+                <td>{{ entity.transactionId }}</td>
+                <td>{{ entity.orderStatus }}</td>
+                <td>{{ entity.orderAmount }}</td>
+                <td>{% if entity.orderCreatedTime %}{{ entity.orderCreatedTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.transactionResponse }}</td>
+                <td>{{ entity.orderId }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('hqtestorder_show', { 'id': entity.orderId }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('hqtestorder_edit', { 'id': entity.orderId }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('hqtestorder_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

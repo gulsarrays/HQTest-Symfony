@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="HQTest\PaymentLibBundle\Entity\HqtestOrder" table="hqtest_order">
+    <id name="orderId" type="integer" column="order_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="customerName" type="string" column="customer_name" length="255" nullable="false"/>
+    <field name="cardHolderName" type="string" column="card_holder_name" length="255" nullable="false"/>
+    <field name="cardNumber" type="string" column="card_number" length="20" nullable="false"/>
+    <field name="cardType" type="string" column="card_type" length="25" nullable="false"/>
+    <field name="cardExpiry" type="string" column="card_expiry" length="10" nullable="false"/>
+    <field name="cardCvv" type="string" column="card_cvv" length="4" nullable="false"/>
+    <field name="paymentCurrency" type="string" column="payment_currency" length="3" nullable="false"/>
+    <field name="paymentGateway" type="string" column="payment_gateway" length="25" nullable="false"/>
+    <field name="transactionId" type="string" column="transaction_id" length="50" nullable="true"/>
+    <field name="orderStatus" type="string" column="order_status" length="20" nullable="true"/>
+    <field name="orderAmount" type="string" column="order_amount" length="20" nullable="true"/>
+    <field name="orderCreatedTime" type="datetime" column="order_created_time" nullable="true"/>
+    <field name="transactionResponse" type="text" column="transaction_response" nullable="false"/>
+  </entity>
+</doctrine-mapping>

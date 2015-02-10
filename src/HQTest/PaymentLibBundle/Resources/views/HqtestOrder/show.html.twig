@@ -1,0 +1,80 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>HqtestOrder</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Customername</th>
+                <td>{{ entity.customerName }}</td>
+            </tr>
+            <tr>
+                <th>Cardholdername</th>
+                <td>{{ entity.cardHolderName }}</td>
+            </tr>
+            <tr>
+                <th>Cardnumber</th>
+                <td>{{ entity.cardNumber }}</td>
+            </tr>
+            <tr>
+                <th>Cardtype</th>
+                <td>{{ entity.cardType }}</td>
+            </tr>
+            <tr>
+                <th>Cardexpiry</th>
+                <td>{{ entity.cardExpiry }}</td>
+            </tr>
+            <tr>
+                <th>Cardcvv</th>
+                <td>{{ entity.cardCvv }}</td>
+            </tr>
+            <tr>
+                <th>Paymentcurrency</th>
+                <td>{{ entity.paymentCurrency }}</td>
+            </tr>
+            <tr>
+                <th>Paymentgateway</th>
+                <td>{{ entity.paymentGateway }}</td>
+            </tr>
+            <tr>
+                <th>Transactionid</th>
+                <td>{{ entity.transactionId }}</td>
+            </tr>
+            <tr>
+                <th>Orderstatus</th>
+                <td>{{ entity.orderStatus }}</td>
+            </tr>
+            <tr>
+                <th>Orderamount</th>
+                <td>{{ entity.orderAmount }}</td>
+            </tr>
+            <tr>
+                <th>Ordercreatedtime</th>
+                <td>{{ entity.orderCreatedTime|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Transactionresponse</th>
+                <td>{{ entity.transactionResponse }}</td>
+            </tr>
+            <tr>
+                <th>Orderid</th>
+                <td>{{ entity.orderId }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('hqtestorder') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('hqtestorder_edit', { 'id': entity.orderId }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

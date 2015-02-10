@@ -1,0 +1,4 @@
+hq_test_paymentpage:
+    resource: "@HQTestPaymentLibBundle/Controller/"
+    type:     annotation
+    prefix:   /payment/
