@@ -33,27 +33,6 @@ Installation :
 	+ To run the phpunit tests
 		phpunit -c app/ or sudo phpunit -c app/
 
-	initailly it may show you like this
-
-	-----------------------------------------------------------------------------------------------------------------------------
-	-	1) Acme\DemoBundle\Tests\Controller\DemoControllerTest::testIndex														-
-	-		Failed asserting that 0 is greater than 0.																			-
-	-																															-
-	-		/var/www/public_html/GTest/HQTest-Symfony-master/src/Acme/DemoBundle/Tests/Controller/DemoControllerTest.php:15		-
-	-																															-
-	-	2) AppBundle\Tests\Controller\DefaultControllerTest::testIndex															-
-	-		Failed asserting that 500 matches expected 200.																		-
-	-																															-
-	-		/var/www/public_html/GTest/HQTest-Symfony-master/src/AppBundle/Tests/Controller/DefaultControllerTest.php:15		-
-	-																															-
-	-	FAILURES!                                         																		-
-	-		Tests: 28, Assertions: 27, Failures: 2, Errors: 1.																	-
-	-----------------------------------------------------------------------------------------------------------------------------
-
-	This is because Acme\DemoBundle\ and AppBunlde Tests are there, so you can delete the controller folder fron the path
-
-	/HQTest-Symfony-master/src/Acme/DemoBundle/Tests/
-	/HQTest-Symfony-master/src/AppBundle/Tests/
 
 
 
