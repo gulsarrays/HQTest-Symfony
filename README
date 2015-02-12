@@ -64,31 +64,14 @@ Similarly as during any other code review in our team, we'll be checking the fol
 
   + Download the Zip from the GITHUB
   + Unzip the folder in web root directory
-  + Create DB and table
-    CREATE TABLE IF NOT EXISTS `hqtest_order` (
-      `order_id` int(11) NOT NULL AUTO_INCREMENT,
-      `customer_name` varchar(255) NOT NULL,
-      `card_holder_name` varchar(255) NOT NULL,
-      `card_number` varchar(20) NOT NULL,
-      `card_type` varchar(25) NOT NULL,
-      `card_expiry` varchar(10) NOT NULL,
-      `card_cvv` varchar(4) NOT NULL,
-      `payment_currency` varchar(3) NOT NULL,
-      `payment_gateway` varchar(25) NOT NULL,
-      `transaction_id` varchar(50) DEFAULT NULL,
-      `order_status` varchar(20) DEFAULT NULL,
-      `order_amount` varchar(20) DEFAULT NULL,
-      `order_created_time` datetime DEFAULT NULL,
-      `transaction_response` text NOT NULL,
-      PRIMARY KEY (`order_id`)
-    ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+  + Create Database
   + By command line go to the project folder
   + run the composer update command and provide the DB credentials
   + run php app/console server:run command
-  + go to the below url and add /hqtest/  like below
-
-    http://127.0.0.1:8000/hqtest/
-
+  + go to the below url http://127.0.0.1:8000
+     On index page click on the button "Check Assigment" above "Welcome" text
+                    Or
+     add /hqtest/  in url like http://127.0.0.1:8000/hqtest/
   + Here you can test the assignment on brower
   + you might need to give write permission to app/cache and app/logs folder
 
