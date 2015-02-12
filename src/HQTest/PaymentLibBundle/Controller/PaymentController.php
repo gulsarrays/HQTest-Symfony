@@ -20,6 +20,26 @@ class PaymentController extends Controller {
      * @Template()
      */
     public function indexAction() {
+        $em = $this->getDoctrine()->getEntityManager();
+        $connection = $em->getConnection();
+        $statement = $connection->prepare("CREATE TABLE IF NOT EXISTS `hqtest_order` (
+         `order_id` int(11) NOT NULL AUTO_INCREMENT,
+         `customer_name` varchar(255) NOT NULL,
+         `card_holder_name` varchar(255) NOT NULL,
+         `card_number` varchar(20) NOT NULL,
+         `card_type` varchar(25) NOT NULL,
+         `card_expiry` varchar(10) NOT NULL,
+         `card_cvv` varchar(4) NOT NULL,
+         `payment_currency` varchar(3) NOT NULL,
+         `payment_gateway` varchar(25) NOT NULL,
+         `transaction_id` varchar(50) DEFAULT NULL,
+         `order_status` varchar(20) DEFAULT NULL,
+         `order_amount` varchar(20) DEFAULT NULL,
+         `order_created_time` datetime DEFAULT NULL,
+         `transaction_response` text NOT NULL,
+          PRIMARY KEY (`order_id`)
+        ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;");
+        $statement->execute();
         return $this->forward('HQTestPaymentLibBundle:Payment:orderinput');
     }
 
